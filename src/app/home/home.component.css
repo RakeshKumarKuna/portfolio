@@ -37,11 +37,22 @@
 .my-text{
     text-shadow: 2px 2px 2px black;
     font-weight: 500;
+    font-family: cursive;
+    color: yellowgreen;
+    
 }
 .my-card{
-    box-shadow: 0px 0px 2px violet;
+    box-shadow: 1px 0px 2px black;
     text-align: center;
+    width: 200px;
+    height: 100px;
+    padding: 5px;
 }
+.myimg:hover{
+    width: 70px;
+    height: 70px;
+}
+
 .my-card:hover{
     box-shadow: 0px 0px 10px rgb(50, 228, 101);
     
