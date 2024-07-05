@@ -8,6 +8,8 @@ import { AboutComponent } from './about/about.component';
 import { WorksComponent } from './works/works.component';
 import { ContactComponent } from './contact/contact.component';
 import { NgxFastMarqueeModule } from 'ngx-fast-marquee';
+import { ProjectoneComponent } from './projectone/projectone.component';
+import { ProjecttwoComponent } from './projecttwo/projecttwo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,6 +17,8 @@ import { NgxFastMarqueeModule } from 'ngx-fast-marquee';
     AboutComponent,
     WorksComponent,
     ContactComponent,
+    ProjectoneComponent,
+    ProjecttwoComponent,
   ],
   imports: [
     BrowserModule,
