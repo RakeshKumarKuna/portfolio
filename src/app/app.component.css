@@ -1,9 +1,9 @@
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ 
 .brand-name{
     color: whitesmoke;
     font-size: smaller;
     font-weight: 500;
     border: 2px solid blueviolet;
-    width: fit-content;
     padding: 1px;
     background-color: blueviolet;
     font-family: cursive;
@@ -20,7 +20,35 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-decoration: none;
 }
-a:hover{
+.links a:hover{
     text-decoration: underline;
 }
 
+}
+@media (max-width:932px)  { 
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+      .mobile-icons{
+        position: absolute;
+        bottom: -500px;
+        width: max-content;
+        display: flex;
+        left: 130px;
+        margin-bottom: 40px;
+        
+      }
+       .my-icons a{
+        margin-left: 20px;
+        
+      }
+      .links a{
+        font-size: x-small;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-decoration: none;
+        margin-right: 25px;
+        margin-top: 10px;
+    }
+    .mobile-head{
+       display: none;
+    }
+    
+}
