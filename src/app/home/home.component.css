@@ -122,12 +122,19 @@
     }
     .profile-pic-mobile{
       margin-left: 35px;
+      
     }
     .my-card-text{
         font-size: xx-small;
     }
     .my-cards{
         display: none;
+    }
+    .profile-pic{
+        color: bisque;
+        border: 1px solid black;
+        border-radius: 40px;
+        background-size: cover;
     }
     
 }

@@ -1,0 +1,40 @@
+@media (min-width:1025px) {
+.mail{
+    border: 2px solid gray;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px gray;
+    margin-top: 50px;
+}
+.mobile-view{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mail{
+    margin-right: 10px;
+}
+}
+@media (max-width:932px)  { 
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+    .mobile-view{
+        display: block;
+    }
+    .mail{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .mail{
+        border: 2px solid gray;
+        width: fit-content;
+        padding: 10px;
+        border-radius: 15px;
+        box-shadow: 2px 2px 2px gray;
+        margin-top: 15px;
+    }
+    .box{
+        height:570px;
+    }
+}

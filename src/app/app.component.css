@@ -1,4 +1,8 @@
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ 
+
+    .mobile-fotter{
+        display: none;
+    }
 .brand-name{
     color: whitesmoke;
     font-size: smaller;
@@ -28,17 +32,7 @@
 @media (max-width:932px)  { 
     /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
       .mobile-icons{
-        position: absolute;
-        bottom: -500px;
-        width: max-content;
-        display: flex;
-        left: 130px;
-        margin-bottom: 40px;
-        
-      }
-       .my-icons a{
-        margin-left: 20px;
-        
+       display: none;
       }
       .links a{
         font-size: x-small;
