@@ -10,6 +10,7 @@ import { ContactComponent } from './contact/contact.component';
 import { NgxFastMarqueeModule } from 'ngx-fast-marquee';
 import { ProjectoneComponent } from './projectone/projectone.component';
 import { ProjecttwoComponent } from './projecttwo/projecttwo.component';
+import { AdminComponent } from './admin/admin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import { ProjecttwoComponent } from './projecttwo/projecttwo.component';
     ContactComponent,
     ProjectoneComponent,
     ProjecttwoComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
