@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   visitorDetails: any = {};
   ngOnInit(): void {
-    this.getBrowserDetails();
+   // this.getBrowserDetails();
   }
    getBrowserDetails(): void {
     this.visitorDetails = {
