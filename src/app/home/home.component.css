@@ -48,6 +48,10 @@
     margin-top: 10px;
     box-shadow: 0px 0px 8px #76528bff;
 }
+.my-data span:hover{
+    border: 2px solid rgb(255, 128, 0);
+    box-shadow: 0px 0px 8px rgb(255, 128, 0);
+}
 .profile-pic{
     color: bisque;
     border: 1px solid black;
@@ -63,15 +67,35 @@
     
 }
 .my-card{
+  
     box-shadow: 1px 0px 2px black;
     text-align: center;
     width: 200px;
     height: 100px;
     padding: 5px;
+    animation: laser 4s linear infinite;
 }
+@keyframes laser {
+    0% {
+      border-top: 1.5px solid rgb(229, 44, 173);
+    }
+    20%{
+        border-right: 1.8px solid rgb(24, 30, 213);
+    }
+    50%{
+        border-bottom: 1.8px solid rgb(136, 16, 60);
+    }
+    80%{
+        border-left: 1.8px solid rgb(25, 93, 139);
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
 .myimg:hover{
     width: 70px;
     height: 70px;
+    animation: none;
 }
 
 .my-card:hover{
