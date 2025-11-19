@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   visitorDetails: any = {};
   ngOnInit(): void {
-    this.getBrowserDetails();
+    //this.getBrowserDetails();
   }
    getBrowserDetails(): void {
     this.visitorDetails = {
@@ -24,6 +24,6 @@ export class HomeComponent implements OnInit {
       }),
     };
     console.log(this.visitorDetails); // You can display this in your UI or send to your server
-  } 
+  }
 
 }
