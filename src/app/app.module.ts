@@ -7,15 +7,12 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { WorksComponent } from './works/works.component';
 import { ContactComponent } from './contact/contact.component';
-import { NgxFastMarqueeModule } from 'ngx-fast-marquee';
 import { ProjectoneComponent } from './projectone/projectone.component';
 import { ProjecttwoComponent } from './projecttwo/projecttwo.component';
 @NgModule({
   declarations: [
-    AppComponent,
     HomeComponent,
     AboutComponent,
-    WorksComponent,
     ContactComponent,
     ProjectoneComponent,
     ProjecttwoComponent,
@@ -23,10 +20,9 @@ import { ProjecttwoComponent } from './projecttwo/projecttwo.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule,
-    NgxFastMarqueeModule
+    RouterModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: []
 })
 export class AppModule { }
