@@ -1,7 +1,7 @@
 // Keep public profile copy here. Add accomplishments only when they can be verified.
 export const profile = {
   name: 'Rakesh Kumar Kuna',
-  role: 'Software Developer',
+  role: 'Software Engineer',
   email: 'kunarakeshkumar@gmail.com',
   github: 'https://github.com/RakeshKumarKuna',
   linkedIn: 'https://www.linkedin.com/in/rakesh-kumar-kuna-4b1a6a1b2/',
@@ -56,15 +56,22 @@ export const capabilities = [
   {
     id: 'ai',
     number: '03',
-    title: 'A smarter way to build.',
-    label: 'AI & agentic development',
+    title: 'Intelligence, engineered.',
+    label: 'AI & ML engineering',
     description:
-      'Using Kiro and Claude Code in development, while exploring machine learning and agentic applications.',
-    skills: ['Kiro', 'Claude Code', 'AI-assisted coding', 'Prompt engineering'],
-    note: 'Exploring next: Python, ML, RAG & AI agents.',
-    diagramLabel: 'AI / AGENTIC WORKFLOWS',
-    diagramTitle: 'Curiosity meets capability.',
+      'Building intelligent applications with Python, machine learning, and LLMs. Connecting models, retrieval, and AI agents to real product experiences.',
+    skills: [
+      'Python',
+      'Machine learning',
+      'LLMs',
+      'RAG',
+      'AI agents',
+      'Prompt engineering',
+    ],
+    note: 'Agentic coding with Kiro & Claude Code.',
+    diagramLabel: 'AI / ML ENGINEERING',
+    diagramTitle: 'Intelligence, built into the stack.',
     diagramDescription:
-      'AI-assisted development today. Exploring intelligent applications next.',
+      'Machine learning, LLM applications, and AI agents connected to full-stack software.',
   },
 ] as const;

@@ -33,7 +33,7 @@ Old `/Home`, `/About`, `/Works`, `/Works/project1`, `/Works/project2`, and `/Con
 - `src/index.html`: title, description, and social-sharing metadata.
 - `public/`: favicon, social image, sitemap, and robots file.
 
-Infor / Infor ION and April 2025–present come from the profile owner's information. “Software Developer” is a provisional general role label. AI-assisted coding with Kiro and Claude Code is presented separately from exploratory ML, Python, RAG, and agents. Replace exploratory language only when the corresponding experience is established. No invented performance metrics or confidential project details are included. The LinkedIn URL was carried over from the previous portfolio and should be confirmed by the owner.
+The owner confirmed the Software Engineer title, Infor / Infor ION, April 2025–present, and positioning across Java full-stack and AI/ML engineering. Agentic coding with Kiro and Claude Code appears in the development workflow. No invented performance metrics or confidential project details are included. The LinkedIn URL was carried over from the previous portfolio and should be confirmed by the owner.
 
 Legacy profile photos and project assets are retained in source for reference, but excluded from the deployed build. The old warehouse project and its routes' content have been removed.
 

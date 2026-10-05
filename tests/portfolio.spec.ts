@@ -8,7 +8,7 @@ test('profile renders without errors or removed project content', async ({
   page.on('pageerror', (error) => errors.push(error.message));
   await page.goto('/');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
-    'Engineering what’s next.*',
+    'Full-stack. AI-powered.',
   );
   await expect(page.locator('#experience')).toContainText(
     'APRIL 2025 — PRESENT',
@@ -32,9 +32,9 @@ test('stack nodes update the accessible detail panel', async ({ page }) => {
   await expect(
     page.getByRole('button', { name: 'Angular THE EXPERIENCE' }),
   ).toHaveAttribute('aria-pressed', 'true');
-  await page.getByRole('button', { name: 'AI & ML THE NEXT CHAPTER' }).click();
+  await page.getByRole('button', { name: 'AI & ML THE INTELLIGENCE' }).click();
   await expect(page.locator('.visual-detail')).toContainText(
-    'Curiosity meets capability.',
+    'Intelligence, built into the stack.',
   );
   await page.getByRole('button', { name: 'Java THE FOUNDATION' }).click();
   await expect(page.locator('.visual-detail')).toContainText(
