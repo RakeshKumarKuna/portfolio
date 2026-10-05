@@ -1,32 +1,56 @@
-Project URL:
-<a href="https://rakeshkumarkuna.netlify.app">Link</a>
+# Rakesh Kumar Kuna — Portfolio v2
 
+A responsive Angular portfolio with a custom animated system diagram, Infor experience, technical skills, and direct contact links. Designed for static hosting on Netlify.
 
-# Profile
+## Run locally
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
+Use Node.js 22 (also specified in `.nvmrc` and `netlify.toml`).
 
-## Development server
+```sh
+npm ci
+npm start
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Open http://localhost:4200.
 
-## Code scaffolding
+## Build and deploy
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```sh
+npm run build
+```
 
-## Build
+The production site is written to `dist/profile/browser`. Netlify reads the build command and publish directory from `netlify.toml`. No server, API key, paid service, or database is required.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+The redesign is developed on `codex/major-portfolio-upgrade`. To review it online, push this branch and open a pull request against `main`; Netlify can create a deploy preview if previews are enabled on the existing site. Merge only after review to update the production site. This repository change does not itself publish the redesign.
 
-## Running unit tests
+Old `/Home`, `/About`, `/Works`, `/Works/project1`, `/Works/project2`, and `/Contact` links redirect to the corresponding sections. Netlify's SPA fallback also supports direct visits to those URLs.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Content
 
-## Running end-to-end tests
+- `src/app/profile.data.ts`: role, contact links, and capability content.
+- `src/app/home/home.component.html`: experience, biography, education, and page structure.
+- `src/app/home/home.component.css`: responsive design and animation.
+- `src/index.html`: title, description, and social-sharing metadata.
+- `public/`: favicon, social image, sitemap, and robots file.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Infor / Infor ION and April 2025–present come from the profile owner's information. “Software Developer” is a provisional general role label. AI-assisted coding with Kiro and Claude Code is presented separately from exploratory ML, Python, RAG, and agents. Replace exploratory language only when the corresponding experience is established. No invented performance metrics or confidential project details are included. The LinkedIn URL was carried over from the previous portfolio and should be confirmed by the owner.
 
-## Further help
+Legacy profile photos and project assets are retained in source for reference, but excluded from the deployed build. The old warehouse project and its routes' content have been removed.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-[![Netlify Status](https://api.netlify.com/api/v1/badges/9fb08221-663a-4c02-8998-f0b3125c2642/deploy-status)](https://app.netlify.com/sites/rakeshkumarkuna/deploys)
+## Motion and accessibility
+
+The diagram supports mouse, touch, and keyboard input. Motion includes entrance transitions, scroll reveals, orbiting nodes, and data pulses. A visible pause control stops decorative animation; the operating system's reduced-motion preference is respected. The page includes a skip link, visible focus indicators, semantic sections, a responsive navigation menu, and accessible email-copy feedback. Typography is self-hosted; font licenses are in `src/assets/fonts`.
+
+## Verify
+
+```sh
+npx playwright install chromium
+npm test
+```
+
+Tests cover desktop/mobile navigation, stack interactions, motion preferences, email copying and fallback, legacy deep links, responsive overflow, runtime errors, and automated accessibility checks. `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` can optionally point to an existing Chrome/Chromium executable. The tests start a local server automatically, or reuse one already running.
+
+```sh
+npm run format
+npm run build
+```
