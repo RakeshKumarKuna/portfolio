@@ -1,21 +1,15 @@
-
-import { Routes } from "@angular/router";
+import { inject } from '@angular/core';
+import { Router, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { WorksComponent } from './works/works.component';
-import { ContactComponent } from './contact/contact.component';
-import { ProjectoneComponent } from './projectone/projectone.component';
-import { ProjecttwoComponent } from './projecttwo/projecttwo.component';
+
+const section = (fragment: string) => () =>
+  inject(Router).createUrlTree(['/'], { fragment });
+
 export const routes: Routes = [
-  {path:'',component:HomeComponent},
-  {path:'Home',component:HomeComponent},
-  {path:'About',component:AboutComponent},
-  {path:'Works',component:WorksComponent,
-    children:[
-      {path:'project1',component:ProjectoneComponent},
-      {path:'project2',component:ProjecttwoComponent},
-      {path:'',component:ProjectoneComponent}
-    ]
-  },
-  {path:'Contact',component:ContactComponent}
+  { path: '', component: HomeComponent },
+  { path: 'Home', redirectTo: '', pathMatch: 'full' },
+  { path: 'About', redirectTo: section('about') },
+  { path: 'Works', redirectTo: section('experience') },
+  { path: 'Contact', redirectTo: section('contact') },
+  { path: '**', redirectTo: '' },
 ];

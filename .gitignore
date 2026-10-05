@@ -43,3 +43,7 @@ Thumbs.db
 
 # Local Netlify folder
 .netlify
+
+# Browser test output
+/test-results
+/playwright-report

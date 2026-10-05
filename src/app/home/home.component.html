@@ -1,255 +1,535 @@
-<div class="box">
-    <div class="my-data">
-        <p class="head-text-one fw-bolder">HI, I'M RAKESH KUMAR.</p>
-        <p class="head-text-two fw-bold">A FULLSTACK DEVELOPER</p>
-        <p class="head-text-three fw-semibold"> BASED IN INDIA</p>
-        <div class="extra-text"><span>DESIGN</span><span>DEVLOPMENT</span><span class="bi bi-award-fill">DEPLOY</span>
-        </div>
+<div class="portfolio" [class.motion-paused]="motionPaused()">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner page-width">
+      <a
+        href="#home"
+        class="brand"
+        aria-label="Rakesh Kumar Kuna, home"
+        (click)="closeMenu()"
+        ><span class="brand-mark">rk<span>.</span></span
+        ><span class="brand-name"
+          >RAKESH KUMAR KUNA<span>{{ profile.role.toUpperCase() }}</span></span
+        ></a
+      >
+      <button
+        class="menu-toggle"
+        type="button"
+        [attr.aria-expanded]="menuOpen()"
+        aria-controls="main-nav"
+        (click)="menuOpen.set(!menuOpen())"
+      >
+        {{ menuOpen() ? "Close" : "Menu"
+        }}<span aria-hidden="true">{{ menuOpen() ? "−" : "+" }}</span>
+      </button>
+      <nav
+        id="main-nav"
+        aria-label="Main navigation"
+        [class.is-open]="menuOpen()"
+      >
+        <a
+          href="#experience"
+          [attr.aria-current]="
+            activeSection() === 'experience' ? 'location' : null
+          "
+          (click)="closeMenu()"
+          >Experience</a
+        >
+        <a
+          href="#expertise"
+          [attr.aria-current]="
+            activeSection() === 'expertise' ? 'location' : null
+          "
+          (click)="closeMenu()"
+          >Expertise</a
+        >
+        <a
+          href="#about"
+          [attr.aria-current]="activeSection() === 'about' ? 'location' : null"
+          (click)="closeMenu()"
+          >About</a
+        >
+        <a class="nav-contact" href="#contact" (click)="closeMenu()"
+          >Let’s talk <span aria-hidden="true">↗</span></a
+        >
+      </nav>
     </div>
-    <div class="profile-pic-mobile">
-        <img  class="profile-pic" src="/assets/dp5.jpeg" width="300px" height="400px" alt="profileimage">
+  </header>
+  <main id="main" tabindex="-1">
+    <section id="home" class="hero page-width" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow hero-enter">
+          <span class="status-dot"></span> {{ profile.role.toUpperCase() }} AT
+          INFOR
+        </div>
+        <h1 id="hero-title" class="hero-enter">
+          <span class="serif-word">AI-powered.</span><br />
+          Full-stack.
+        </h1>
+        <p class="hero-description hero-enter">
+          I’m Rakesh, a Software Engineer building intelligent AI/ML solutions
+          backed by strong Java full-stack engineering. From machine learning
+          and AI agents to Spring Boot and Angular, I connect intelligence with
+          real-world applications.
+        </p>
+        <div class="hero-actions hero-enter">
+          <a class="button button-primary" href="#experience"
+            >Explore my work <span aria-hidden="true">↗</span></a
+          ><a
+            class="text-link"
+            [href]="profile.github"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 17 17 7M7 7h10v10" /></svg
+            ><span class="sr-only"> (opens in a new tab)</span></a
+          >
+        </div>
+        <div class="hero-footnote hero-enter">
+          <span>BASED IN INDIA</span
+          ><span class="small-cross" aria-hidden="true">+</span
+          ><span>BUILDING WITH INTENT</span>
+        </div>
+      </div>
+      <div
+        class="system-visual hero-enter"
+        aria-label="Explore my engineering focus"
+      >
+        <div class="visual-topline">
+          <span><span class="mini-square"></span> THE CONNECTED STACK</span
+          ><span>FIG. 01</span>
+        </div>
+        <div
+          class="system-map"
+          [class.frontend-active]="selectedCapability() === 'frontend'"
+          [class.backend-active]="selectedCapability() === 'backend'"
+        >
+          <svg
+            class="system-lines"
+            viewBox="0 0 500 430"
+            fill="none"
+            aria-hidden="true"
+          >
+            <defs>
+              <linearGradient
+                id="orbitGradient"
+                x1="70"
+                y1="50"
+                x2="430"
+                y2="390"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#39745e" stop-opacity=".7" />
+                <stop offset=".5" stop-color="#39745e" stop-opacity=".06" />
+                <stop offset="1" stop-color="#39745e" stop-opacity=".45" />
+              </linearGradient>
+            </defs>
+            <circle cx="250" cy="210" r="163" class="outer-orbit" />
+            <circle cx="250" cy="210" r="113" class="inner-orbit" />
+            <ellipse
+              cx="250"
+              cy="210"
+              rx="195"
+              ry="70"
+              transform="rotate(-36 250 210)"
+              stroke="url(#orbitGradient)"
+            />
+            <path class="map-path path-backend" d="M250 210 191 354" />
+            <path class="map-path path-frontend" d="M250 210 401 188" />
+            <path class="map-path path-ai" d="M250 210 120 109" />
+            <g class="orbit-spin">
+              <circle cx="250" cy="47" r="4" fill="#39745e" />
+              <circle cx="250" cy="373" r="3" fill="#96b5a6" />
+            </g>
+            <circle class="travel-dot dot-backend" r="3" fill="#39745e" />
+            <circle class="travel-dot dot-frontend" r="3" fill="#39745e" />
+            <circle class="travel-dot dot-ai" r="3" fill="#39745e" />
+            <path
+              d="M38 210h12m-6-6v12M450 305h12m-6-6v12M332 51h8m-4-4v8"
+              stroke="#8fa59a"
+            />
+          </svg>
+          <div class="core-node" aria-hidden="true">
+            <div class="core-inner">
+              <span class="core-icon">&lt;/&gt;</span
+              ><span>BUILD. CONNECT.</span
+              ><span class="core-caption">KEEP EVOLVING.</span>
+            </div>
+          </div>
+          <button
+            class="stack-node node-ai"
+            type="button"
+            [class.is-active]="selectedCapability() === 'ai'"
+            [attr.aria-pressed]="selectedCapability() === 'ai'"
+            (click)="selectedCapability.set('ai')"
+          >
+            <span class="node-icon ai-icon" aria-hidden="true">✳</span
+            ><span
+              >AI & ML<span class="node-sublabel">THE INTELLIGENCE</span></span
+            ><span class="node-indicator"></span>
+          </button>
+          <button
+            class="stack-node node-java"
+            type="button"
+            [class.is-active]="selectedCapability() === 'backend'"
+            [attr.aria-pressed]="selectedCapability() === 'backend'"
+            (click)="selectedCapability.set('backend')"
+          >
+            <span class="node-icon java-icon" aria-hidden="true"
+              >&#123; &#125;</span
+            ><span>Java<span class="node-sublabel">THE FOUNDATION</span></span
+            ><span class="node-indicator"></span>
+          </button>
+          <button
+            class="stack-node node-angular"
+            type="button"
+            [class.is-active]="selectedCapability() === 'frontend'"
+            [attr.aria-pressed]="selectedCapability() === 'frontend'"
+            (click)="selectedCapability.set('frontend')"
+          >
+            <span class="node-icon angular-icon" aria-hidden="true">A</span
+            ><span
+              >Angular<span class="node-sublabel">THE EXPERIENCE</span></span
+            ><span class="node-indicator"></span>
+          </button>
+          <span class="map-coordinate"
+            >INTELLIGENCE / SYSTEMS / INTERFACES</span
+          >
+        </div>
+        <div class="visual-detail" aria-live="polite" aria-atomic="true">
+          <div class="detail-top">
+            <span class="detail-label">{{
+              activeCapability().diagramLabel
+            }}</span
+            ><span class="detail-count"
+              >{{ activeCapability().number }} / 03</span
+            >
+          </div>
+          <p>{{ activeCapability().diagramTitle }}</p>
+          <span class="detail-description">{{
+            activeCapability().diagramDescription
+          }}</span>
+        </div>
+        <div class="visual-bottomline">
+          <span>SELECT A NODE TO EXPLORE</span
+          ><button
+            type="button"
+            [attr.aria-pressed]="motionPaused()"
+            (click)="motionPaused.set(!motionPaused())"
+          >
+            {{ motionPaused() ? "Play motion" : "Pause motion" }}
+            <span aria-hidden="true">{{ motionPaused() ? "▷" : "Ⅱ" }}</span>
+          </button>
+        </div>
+      </div>
+      <div class="hero-bottom">
+        <a href="#experience"
+          ><span class="scroll-line" aria-hidden="true"></span> SCROLL TO
+          DISCOVER</a
+        ><span
+          >GOOD SOFTWARE CONNECTS THE DOTS.<span
+            class="asterisk"
+            aria-hidden="true"
+            >✳</span
+          ></span
+        >
+      </div>
+    </section>
+    <div class="stack-strip" aria-label="Core technologies">
+      <div class="page-width">
+        <span class="strip-label">MY EVERYDAY TOOLKIT</span>
+        <div class="strip-items">
+          <span>AI / ML</span><span class="strip-divider">/</span
+          ><span>Python</span><span class="strip-divider">/</span
+          ><span>LLMs</span><span class="strip-divider">/</span><span>Java</span
+          ><span class="strip-divider">/</span><span>Spring Boot</span
+          ><span class="strip-divider">/</span><span>Angular</span>
+        </div>
+      </div>
     </div>
-</div>
-<hr>
-<div class="my-card-text">
-    <p class="fw-bold fs-3 text-bg-info text-center">My Skills</p>
-</div>
-<div class="my-cards mb-4">
-    <div class="d-flex d-inline justify-content-around my-cards-one">
-        <div class="my-card">
+    <section
+      id="experience"
+      class="experience section page-width"
+      aria-labelledby="experience-title"
+    >
+      <div class="section-heading" data-reveal>
+        <div>
+          <p class="eyebrow section-label"><span>01 /</span> EXPERIENCE</p>
+          <h2 id="experience-title">
+            Real systems.<br /><span class="muted">Real-world thinking.</span>
+          </h2>
+        </div>
+        <p class="section-intro">
+          Bringing my full-stack perspective<br />to enterprise software at
+          Infor.
+        </p>
+      </div>
+      <article class="experience-card" data-reveal>
+        <div class="experience-sidebar">
+          <div class="infor-wordmark">
+            <img
+              src="/infor-logo.png"
+              alt="Infor"
+              width="104"
+              height="104"
+              loading="lazy"
+            />
+          </div>
+          <div class="experience-period">
+            <span class="status-dot"></span> CURRENT CHAPTER
+          </div>
+          <p>{{ profile.since.toUpperCase() }} — PRESENT</p>
+          <span class="employment-type">PROFESSIONAL EXPERIENCE</span>
+        </div>
+        <div class="experience-main">
+          <div class="experience-title">
             <div>
-                <img src="/assets/java.svg" width="60px" height="60px" alt="Java" class="myimg">
-                <div>
-                    <p>Java</p>
-                </div>
+              <p class="eyebrow">
+                {{ profile.company }} / {{ profile.project }}
+              </p>
+              <h3>{{ profile.role }}</h3>
             </div>
-        </div>
-        <div>
+            <span class="corner-arrow" aria-hidden="true">↗</span>
+          </div>
+          <p class="experience-lead">
+            Working on <strong>Infor ION.</strong><br />Engineering at the
+            intersection of enterprise software and connected systems.
+          </p>
+          <div class="experience-details">
             <div>
-                <div class="my-card">
-                    <img src="/assets/springboot.png" width="60px" height="60px" alt="Springboot" class="myimg">
-                    <div>
-                        <p>SpringBoot</p>
-                    </div>
-                </div>
+              <span class="detail-index">01</span>
+              <h4>Enterprise context</h4>
+              <p>
+                Part of the Infor ION project, bringing a software engineer’s
+                perspective to connected enterprise software.
+              </p>
             </div>
-
-        </div>
-        <div>
             <div>
-                <div class="my-card">
-                    <img src="/assets/hibernate.svg" width="60px" height="60px" alt="Hibernate" class="myimg">
-                    <div>
-                        <p>Hibernate</p>
-                    </div>
-                </div>
+              <span class="detail-index">02</span>
+              <h4>Full-stack engineering</h4>
+              <p>
+                Connecting Java services, Angular interfaces, and data layers
+                through a full-stack approach to software engineering.
+              </p>
             </div>
-
-        </div>
-        <div>
             <div>
-                <div class="my-card">
-                    <img src="/assets/oracle.svg" width="60px" height="60px" alt="Oracle" class="myimg">
-                    <div>
-                        <p>Oracle</p>
-                    </div>
-                </div>
+              <span class="detail-index">03</span>
+              <h4>Agentic development</h4>
+              <p>
+                Using Kiro and Claude Code across the development workflow, with
+                engineering judgment guiding implementation and review.
+              </p>
             </div>
+          </div>
+          <div class="experience-tags">
+            <span>Infor ION</span><span>Enterprise software</span
+            ><span>Full-stack development</span>
+          </div>
         </div>
-        <div>
-            <div>
-                <div class="my-card">
-                    <img src="/assets/windows.svg" width="60px" height="60px" alt="windows" class="myimg">
-                    <div>
-                        <p>Windows</p>
-                    </div>
-                </div>
-            </div>
+      </article>
+      <div class="experience-note" data-reveal>
+        <span class="note-star" aria-hidden="true">↳</span>
+        <p>Curious about what I build outside work?</p>
+        <a
+          class="text-link"
+          [href]="profile.github"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Explore my GitHub <span aria-hidden="true">↗</span
+          ><span class="sr-only"> (opens in a new tab)</span></a
+        >
+      </div>
+    </section>
+    <section
+      id="expertise"
+      class="expertise section"
+      aria-labelledby="expertise-title"
+    >
+      <div class="page-width">
+        <div class="section-heading" data-reveal>
+          <div>
+            <p class="eyebrow section-label"><span>02 /</span> WHAT I BRING</p>
+            <h2 id="expertise-title">
+              Applied intelligence.<br /><span class="muted"
+                >Full-stack expertise.</span
+              >
+            </h2>
+          </div>
+          <p class="section-intro">
+            Machine learning and AI. Java and Angular.<br />Engineering across
+            the intelligence and application layers.
+          </p>
         </div>
-    </div>
-    <!-- Divider -->
-    <div class="d-flex d-inline justify-content-around pt-3">
-        <div>
-            <div class="my-card">
-                <img src="/assets/html.svg" width="60px" height="60px" alt="html" class="myimg">
-                <div>
-                    <p>HTML</p>
-                </div>
-            </div>
+        <div class="capability-grid">
+          @for (capability of capabilities; track capability.id) {
+            <article
+              class="capability-card"
+              [class.ai-card]="capability.id === 'ai'"
+              data-reveal
+            >
+              <div class="capability-top">
+                <span class="capability-icon" aria-hidden="true">{{
+                  capability.id === "backend"
+                    ? "{ }"
+                    : capability.id === "frontend"
+                      ? "⌘"
+                      : "✳"
+                }}</span
+                ><span class="mono">/ {{ capability.number }}</span>
+              </div>
+              <p class="eyebrow capability-label">{{ capability.label }}</p>
+              <h3>{{ capability.title }}</h3>
+              <p class="capability-description">{{ capability.description }}</p>
+              <ul class="skill-tags" aria-label="Skills">
+                @for (skill of capability.skills; track skill) {
+                  <li>{{ skill }}</li>
+                }
+              </ul>
+              <p class="capability-note">
+                <span aria-hidden="true">↳</span>{{ capability.note }}
+              </p>
+            </article>
+          }
         </div>
-        <div>
-            <div>
-                <div class="my-card">
-                    <img src="/assets/css.svg" width="60px" height="60px" alt="css" class="myimg">
-                    <div>
-                        <p>CSS</p>
-                    </div>
-                </div>
-            </div>
-
+        <div class="workflow" data-reveal>
+          <span class="eyebrow">ALSO IN THE WORKFLOW</span>
+          <ul aria-label="Development tools">
+            <li>Git & GitHub</li>
+            <li>Docker</li>
+            <li>Jenkins / CI/CD</li>
+            <li>Linux</li>
+            <li>MongoDB</li>
+            <li>Kiro</li>
+            <li>Claude Code</li>
+          </ul>
+          <span class="workflow-icon" aria-hidden="true">↗</span>
         </div>
-        <div>
-            <div>
-                <div class="my-card">
-                    <img src="/assets/javascript.svg" width="60px" height="60px" alt="JavaScript" class="myimg">
-                    <div>
-                        <p>JavaScript</p>
-                    </div>
-                </div>
-            </div>
-
+      </div>
+    </section>
+    <section
+      id="about"
+      class="about section page-width"
+      aria-labelledby="about-title"
+    >
+      <div class="about-left" data-reveal>
+        <p class="eyebrow section-label">
+          <span>03 /</span> THE PERSON BEHIND THE CODE
+        </p>
+        <h2 id="about-title">
+          <span class="serif-word">An AI practitioner.</span><br />A systems
+          thinker.<br />A builder.
+        </h2>
+        <div class="about-signature">
+          Rakesh<span class="signature-dot">.</span
+          ><span class="signature-line"></span>
         </div>
-        <div>
-            <div>
-                <div class="my-card">
-                    <img src="/assets/mysql.svg" width="60px" height="60px" alt="mysql" class="myimg">
-                    <div>
-                        <p>MySQL</p>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="about-right" data-reveal>
+        <p class="about-lead">
+          Intelligence built into the product.<br />Strong software foundations.
+        </p>
+        <p>
+          I’m Rakesh Kumar Kuna, a Software Engineer based in India, working on
+          the Infor ION project at Infor. My expertise spans AI/ML engineering
+          and Java full-stack development, connecting intelligent systems with
+          dependable application architecture.
+        </p>
+        <p>
+          I work across machine learning, LLM-powered applications, and AI
+          agents, using Python and retrieval-augmented generation to connect
+          intelligence with useful products. Java services and Angular
+          interfaces complete the stack, while Kiro and Claude Code support my
+          development workflow.
+        </p>
+        <div class="about-facts">
+          <div>
+            <span class="eyebrow">EDUCATION</span>
+            <h3>Master of Computer Applications</h3>
+            <p>
+              A foundation in computer science. A habit of learning by doing.
+            </p>
+          </div>
+          <div>
+            <span class="eyebrow">CORE SPECIALIZATION</span>
+            <h3>Applied AI & machine learning</h3>
+            <p>
+              Python, machine learning, LLM applications, and agentic systems
+              integrated with full-stack software.
+            </p>
+          </div>
         </div>
-        <div>
-            <div>
-                <div class="my-card">
-                    <img src="/assets/linux.svg.png" width="60px" height="60px" alt="linux" class="myimg">
-                    <div>
-                        <p>Linux</p>
-                    </div>
-                </div>
-            </div>
+      </div>
+    </section>
+    <section
+      id="contact"
+      class="contact section"
+      aria-labelledby="contact-title"
+    >
+      <div class="page-width">
+        <div class="contact-top" data-reveal>
+          <p class="eyebrow section-label"><span>04 /</span> LET’S CONNECT</p>
+          <span class="contact-note"
+            ><span class="status-dot"></span> GOOD CONVERSATIONS START
+            SOMETHING.</span
+          >
         </div>
-    </div>
-    <!-- Divider -->
-    <div class="d-flex d-inline justify-content-around pt-3">
-        <div>
-            <div class="my-card">
-                <img src="/assets/angular.svg" width="60px" height="60px" alt="html" class="myimg">
-                <div>
-                    <p>Angular</p>
-                </div>
-            </div>
+        <div class="contact-main" data-reveal>
+          <div>
+            <h2 id="contact-title">
+              Have something<br />in <span class="serif-word">mind?</span>
+            </h2>
+            <p>
+              A technical challenge, an interesting idea,<br />or just a hello.
+              I’d love to hear from you.
+            </p>
+          </div>
+          <a
+            class="contact-orb"
+            [href]="'mailto:' + profile.email"
+            aria-label="Send Rakesh an email"
+            ><span aria-hidden="true">↗</span></a
+          >
         </div>
-        <div>
-            <div>
-                <div class="my-card">
-                    <img src="/assets/react-js.svg" width="60px" height="60px" alt="css" class="myimg">
-                    <div>
-                        <p>React</p>
-                    </div>
-                </div>
-            </div>
-
+        <div class="contact-bottom" data-reveal>
+          <div class="email-group">
+            <a class="email-link" [href]="'mailto:' + profile.email">{{
+              profile.email
+            }}</a
+            ><button
+              type="button"
+              class="copy-button"
+              (click)="copyEmail()"
+              [attr.aria-label]="copyStatus()"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="8" y="8" width="12" height="12" rx="2" />
+                <path d="M16 8V4H4v12h4" />
+              </svg></button
+            ><span class="copy-status" role="status">{{
+              copyStatus() === "Copy email" ? "" : copyStatus()
+            }}</span>
+          </div>
+          <div class="contact-socials">
+            <a [href]="profile.github" target="_blank" rel="noopener noreferrer"
+              >GitHub ↗<span class="sr-only"> (opens in a new tab)</span></a
+            ><a
+              [href]="profile.linkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn ↗<span class="sr-only"> (opens in a new tab)</span></a
+            >
+          </div>
         </div>
-        <div>
-            <div>
-                <div class="my-card">
-                    <img src="/assets/typescript.svg" width="60px" height="60px" alt="JavaScript" class="myimg">
-                    <div>
-                        <p>TypeScript</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div>
-            <div>
-                <div class="my-card">
-                    <img src="/assets/mongo.svg" width="60px" height="60px" alt="mysql" class="myimg">
-                    <div>
-                        <p>MongoDb</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div>
-            <div>
-                <div class="my-card">
-                    <img src="/assets/github.svg" width="60px" height="60px" alt="linux" class="myimg">
-                    <div>
-                        <p>GitHub</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- mobile skills data -->
-<div>
-      <!--  first row -->
-    <div class="pt-2 mb-3 my-marqee border border-2 shadow  shadow-lg ">
-                   <div class="d-block text-center">
-                <img src="/assets/java.svg" width="60px" height="60px" alt="Java" class="myimg">
-                <p>Java</p>
-            </div>
-            <div>&nbsp;&nbsp;&nbsp;</div>
-            <div class="d-block text-center">
-                <img src="/assets/springboot.png" width="60px" height="60px" alt="Springboot" class="myimg">
-                <p>SpringBoot</p>
-            </div>
-            <div>&nbsp;&nbsp;&nbsp;</div>
-            <div class="d-block text-center">
-                <img src="/assets/hibernate.svg" width="60px" height="60px" alt="Hibernate" class="myimg">
-                <p>Hibernate</p>
-            </div>
-            <div>&nbsp;&nbsp;&nbsp;</div>
-            <div class="d-block text-center">
-                <img src="/assets/oracle.svg" width="60px" height="60px" alt="Oracle" class="myimg">
-                <p>Oracle</p>
-            </div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
-
-    </div>
-    <!--  second row -->
-
-    <div class="pt-2 mb-3 my-marqee border border-2 shadow  shadow-lg ">
-
-            <div class="d-block text-center">
-                <img src="/assets/windows.svg" width="60px" height="60px" alt="windows" class="myimg">
-                <p>Windows</p>
-            </div>
-            <div>&nbsp;&nbsp;&nbsp;</div>
-            <div class="d-block text-center">
-                <img src="/assets/html.svg" width="60px" height="60px" alt="html" class="myimg">
-                <p>HTML</p>
-            </div>
-            <div>&nbsp;&nbsp;&nbsp;</div>
-            <div class="d-block text-center">
-                <img src="/assets/css.svg" width="60px" height="60px" alt="css" class="myimg">
-                <p>CSS</p>
-            </div>
-            <div>&nbsp;&nbsp;&nbsp;</div>
-            <div class="d-block text-center">
-                <img src="/assets/javascript.svg" width="60px" height="60px" alt="JavaScript" class="myimg">
-                <p>JavaScript</p>
-            </div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
-
-    </div>
-       <!--  third row -->
-       <div class="pt-2 mb-3 my-marqee border border-2 shadow  shadow-lg ">
-
-            <div class="d-block text-center">
-                <img src="/assets/mysql.svg" width="60px" height="60px" alt="mysql" class="myimg">
-                <p>MySQL</p>
-            </div>
-            <div>&nbsp;&nbsp;&nbsp;</div>
-            <div class="d-block text-center">
-                <img src="/assets/linux.svg.png" width="60px" height="60px" alt="linux" class="myimg">
-                <p>Linux</p>
-            </div>
-            <div>&nbsp;&nbsp;&nbsp;</div>
-            <div class="d-block text-center">
-                <img src="/assets/angular.svg" width="60px" height="60px" alt="html" class="myimg">
-                <p>Angular/p>
-            </div>
-            <div>&nbsp;&nbsp;&nbsp;</div>
-            <div class="d-block text-center">
-                <img src="/assets/react-js.svg" width="60px" height="60px" alt="css" class="myimg">
-                <p>React</p>
-            </div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
-
-    </div>
-
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer page-width">
+    <a class="footer-brand" href="#home">rk<span>.</span></a>
+    <p>© {{ year }} Rakesh Kumar Kuna</p>
+    <span>CRAFTED WITH CURIOSITY. BUILT WITH ANGULAR.</span
+    ><a class="back-to-top" href="#home"
+      >Back to top <span aria-hidden="true">↑</span></a
+    >
+  </footer>
 </div>
