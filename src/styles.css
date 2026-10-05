@@ -13,13 +13,13 @@
   font-display: swap;
 }
 :root {
-  color-scheme: dark;
-  --bg: #131511;
-  --surface: #1b1e18;
-  --text: #efeee7;
-  --muted: #a3a79c;
-  --accent: #d5f58b;
-  --line: #34382e;
+  color-scheme: light;
+  --bg: #f7f8f4;
+  --surface: #edf2eb;
+  --text: #26342d;
+  --muted: #56645c;
+  --accent: #286349;
+  --line: #d4ded5;
   --mono: "DM Mono", monospace;
   --sans: Manrope, Arial, sans-serif;
 }

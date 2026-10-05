@@ -8,14 +8,19 @@ test('profile renders without errors or removed project content', async ({
   page.on('pageerror', (error) => errors.push(error.message));
   await page.goto('/');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
-    'Full-stack. AI-powered.',
+    'AI-powered. Full-stack.',
   );
   await expect(page.locator('#experience')).toContainText(
     'APRIL 2025 — PRESENT',
   );
   await expect(page.locator('#experience')).toContainText('Infor ION');
   await expect(page.locator('body')).not.toContainText(/warehouse/i);
-  await expect(page.locator('img')).toHaveCount(0);
+  await expect(
+    page.locator('img[src*="dp5"], img[src*="rakeshpic"]'),
+  ).toHaveCount(0);
+  await expect(
+    page.getByRole('img', { name: 'Infor', exact: true }),
+  ).toBeVisible();
   await page.evaluate(() => document.fonts.ready);
   expect(
     await page.evaluate(() => document.fonts.check('500 16px Manrope')),
@@ -25,6 +30,10 @@ test('profile renders without errors or removed project content', async ({
 
 test('stack nodes update the accessible detail panel', async ({ page }) => {
   await page.goto('/');
+  await expect(
+    page.getByRole('button', { name: 'AI & ML THE INTELLIGENCE' }),
+  ).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('.detail-count')).toHaveText('01 / 03');
   await page.getByRole('button', { name: 'Angular THE EXPERIENCE' }).click();
   await expect(page.locator('.visual-detail')).toContainText(
     'Complexity, made intuitive.',

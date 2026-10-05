@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-<rect width="1200" height="630" fill="#131511"/><path d="M64 100H1136M64 542H1136" stroke="#34382e"/>
-<text x="64" y="69" font-family="Arial,sans-serif" font-size="36" font-weight="bold" letter-spacing="-3" fill="#efeee7">rk<tspan fill="#d5f58b">.</tspan></text>
-<text x="128" y="66" font-family="Arial,sans-serif" font-size="14" letter-spacing="2" fill="#efeee7">RAKESH KUMAR KUNA</text>
-<text x="65" y="169" font-family="monospace" font-size="12" letter-spacing="2" fill="#c1d49f">SOFTWARE ENGINEER AT INFOR</text>
-<text x="60" y="282" font-family="Arial,sans-serif" font-size="82" letter-spacing="-4" fill="#efeee7">Full-stack.</text>
-<text x="60" y="385" font-family="Georgia,serif" font-size="88" font-style="italic" letter-spacing="-4" fill="#d5f58b">AI-powered.</text>
-<text x="65" y="459" font-family="Arial,sans-serif" font-size="19" fill="#a3a79c">Java full-stack applications. Intelligent AI/ML solutions.</text>
-<circle cx="932" cy="310" r="155" stroke="#5b6845" fill="none" stroke-dasharray="2 7"/><ellipse cx="932" cy="310" rx="181" ry="70" transform="rotate(-35 932 310)" stroke="#7c9155" fill="none"/>
-<rect x="865" y="243" width="134" height="134" rx="30" transform="rotate(-12 932 310)" fill="#25311a" stroke="#7c9155"/>
-<text x="932" y="323" font-family="monospace" font-size="43" text-anchor="middle" fill="#d5f58b">&lt;/&gt;</text><circle cx="932" cy="155" r="5" fill="#d5f58b"/><circle cx="788" cy="367" r="4" fill="#d5f58b"/>
-<text x="65" y="585" font-family="monospace" font-size="12" letter-spacing="1" fill="#9fad8c">BUILD. CONNECT. KEEP EVOLVING.</text>
-<text x="1136" y="585" text-anchor="end" font-family="monospace" font-size="12" fill="#c1d49f">rakeshkumarkuna.netlify.app</text></svg>
+<rect width="1200" height="630" fill="#f7f8f4"/><path d="M64 100H1136M64 542H1136" stroke="#d4ded5"/>
+<text x="64" y="69" font-family="Arial,sans-serif" font-size="36" font-weight="bold" letter-spacing="-3" fill="#26342d">rk<tspan fill="#286349">.</tspan></text>
+<text x="128" y="66" font-family="Arial,sans-serif" font-size="14" letter-spacing="2" fill="#26342d">RAKESH KUMAR KUNA</text>
+<text x="65" y="169" font-family="monospace" font-size="12" letter-spacing="2" fill="#56645c">SOFTWARE ENGINEER AT INFOR</text>
+<text x="60" y="282" font-family="Georgia,serif" font-style="italic" font-size="88" letter-spacing="-4" fill="#286349">AI-powered.</text>
+<text x="60" y="385" font-family="Arial,sans-serif" font-size="82" letter-spacing="-4" fill="#26342d">Full-stack.</text>
+<text x="65" y="459" font-family="Arial,sans-serif" font-size="19" fill="#56645c">Intelligent AI/ML solutions. Java full-stack engineering.</text>
+<circle cx="932" cy="310" r="155" stroke="#aac2b4" fill="none" stroke-dasharray="2 7"/><ellipse cx="932" cy="310" rx="181" ry="70" transform="rotate(-35 932 310)" stroke="#789d89" fill="none"/>
+<rect x="865" y="243" width="134" height="134" rx="30" transform="rotate(-12 932 310)" fill="#e0eade" stroke="#789d89"/>
+<text x="932" y="323" font-family="monospace" font-size="43" text-anchor="middle" fill="#286349">&lt;/&gt;</text><circle cx="932" cy="155" r="5" fill="#286349"/><circle cx="788" cy="367" r="4" fill="#286349"/>
+<text x="65" y="585" font-family="monospace" font-size="12" letter-spacing="1" fill="#56645c">BUILD. CONNECT. KEEP EVOLVING.</text>
+<text x="1136" y="585" text-anchor="end" font-family="monospace" font-size="12" fill="#56645c">rakeshkumarkuna.netlify.app</text></svg>

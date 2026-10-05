@@ -12,8 +12,29 @@ export const profile = {
 
 export const capabilities = [
   {
-    id: 'backend',
+    id: 'ai',
     number: '01',
+    title: 'Intelligence, engineered.',
+    label: 'AI & ML engineering',
+    description:
+      'Building intelligent applications with Python, machine learning, and LLMs. Connecting models, retrieval, and AI agents to real product experiences.',
+    skills: [
+      'Python',
+      'Machine learning',
+      'LLMs',
+      'RAG',
+      'AI agents',
+      'Prompt engineering',
+    ],
+    note: 'Agentic coding with Kiro & Claude Code.',
+    diagramLabel: 'AI / ML ENGINEERING',
+    diagramTitle: 'Intelligence, built into the stack.',
+    diagramDescription:
+      'Machine learning, LLM applications, and AI agents connected to full-stack software.',
+  },
+  {
+    id: 'backend',
+    number: '02',
     title: 'Behind the interface.',
     label: 'Backend engineering',
     description:
@@ -34,7 +55,7 @@ export const capabilities = [
   },
   {
     id: 'frontend',
-    number: '02',
+    number: '03',
     title: 'Made for people.',
     label: 'Frontend development',
     description:
@@ -52,26 +73,5 @@ export const capabilities = [
     diagramTitle: 'Complexity, made intuitive.',
     diagramDescription:
       'Thoughtful interfaces, reusable components, and responsive layouts.',
-  },
-  {
-    id: 'ai',
-    number: '03',
-    title: 'Intelligence, engineered.',
-    label: 'AI & ML engineering',
-    description:
-      'Building intelligent applications with Python, machine learning, and LLMs. Connecting models, retrieval, and AI agents to real product experiences.',
-    skills: [
-      'Python',
-      'Machine learning',
-      'LLMs',
-      'RAG',
-      'AI agents',
-      'Prompt engineering',
-    ],
-    note: 'Agentic coding with Kiro & Claude Code.',
-    diagramLabel: 'AI / ML ENGINEERING',
-    diagramTitle: 'Intelligence, built into the stack.',
-    diagramDescription:
-      'Machine learning, LLM applications, and AI agents connected to full-stack software.',
   },
 ] as const;

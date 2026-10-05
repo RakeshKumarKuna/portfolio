@@ -1,6 +1,7 @@
 import {
   AfterViewInit,
   Component,
+  computed,
   ElementRef,
   HostListener,
   NgZone,
@@ -21,7 +22,13 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   readonly year = new Date().getFullYear();
   readonly menuOpen = signal(false);
   readonly activeSection = signal('home');
-  readonly selectedCapability = signal(0);
+  readonly selectedCapability =
+    signal<(typeof capabilities)[number]['id']>('ai');
+  readonly activeCapability = computed(() =>
+    this.capabilities.find(
+      (capability) => capability.id === this.selectedCapability(),
+    )!,
+  );
   readonly copyStatus = signal('Copy email');
   readonly motionPaused = signal(false);
   private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);

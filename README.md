@@ -1,6 +1,6 @@
 # Rakesh Kumar Kuna — Portfolio v2
 
-A responsive Angular portfolio with a custom animated system diagram, Infor experience, technical skills, and direct contact links. Designed for static hosting on Netlify.
+A responsive Angular portfolio with a light palette, AI/ML-first content, a custom animated system diagram, Infor experience, and direct contact links. Designed for static hosting on Netlify.
 
 ## Run locally
 
@@ -33,9 +33,11 @@ Old `/Home`, `/About`, `/Works`, `/Works/project1`, `/Works/project2`, and `/Con
 - `src/index.html`: title, description, and social-sharing metadata.
 - `public/`: favicon, social image, sitemap, and robots file.
 
-The owner confirmed the Software Engineer title, Infor / Infor ION, April 2025–present, and positioning across Java full-stack and AI/ML engineering. Agentic coding with Kiro and Claude Code appears in the development workflow. No invented performance metrics or confidential project details are included. The LinkedIn URL was carried over from the previous portfolio and should be confirmed by the owner.
+The owner confirmed the Software Engineer title, Infor / Infor ION, April 2025–present, and positioning across AI/ML and Java full-stack engineering. Agentic coding with Kiro and Claude Code appears in the development workflow. No invented performance metrics or confidential project details are included. The LinkedIn URL was carried over from the previous portfolio and should be confirmed by the owner.
 
 Legacy profile photos and project assets are retained in source for reference, but excluded from the deployed build. The old warehouse project and its routes' content have been removed.
+
+The Infor experience card uses the official [Infor logo](https://www.infor.com/logo-infor.png), served locally, with red and white styling. The SVG source for the social preview is kept alongside the generated PNG in `public/`.
 
 ## Motion and accessibility
 

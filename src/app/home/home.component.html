@@ -63,12 +63,14 @@
           INFOR
         </div>
         <h1 id="hero-title" class="hero-enter">
-          Full-stack. <br /><span class="serif-word">AI-powered.</span>
+          <span class="serif-word">AI-powered.</span><br />
+          Full-stack.
         </h1>
         <p class="hero-description hero-enter">
-          I’m Rakesh, a Software Engineer building Java full-stack applications
-          and intelligent AI/ML solutions. From Spring Boot and Angular to
-          machine learning and AI agents, I connect the entire stack.
+          I’m Rakesh, a Software Engineer building intelligent AI/ML solutions
+          backed by strong Java full-stack engineering. From machine learning
+          and AI agents to Spring Boot and Angular, I connect intelligence with
+          real-world applications.
         </p>
         <div class="hero-actions hero-enter">
           <a class="button button-primary" href="#experience"
@@ -100,8 +102,8 @@
         </div>
         <div
           class="system-map"
-          [class.frontend-active]="selectedCapability() === 1"
-          [class.ai-active]="selectedCapability() === 2"
+          [class.frontend-active]="selectedCapability() === 'frontend'"
+          [class.backend-active]="selectedCapability() === 'backend'"
         >
           <svg
             class="system-lines"
@@ -118,9 +120,9 @@
                 y2="390"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#d5f58b" stop-opacity=".7" />
-                <stop offset=".5" stop-color="#d5f58b" stop-opacity=".06" />
-                <stop offset="1" stop-color="#d5f58b" stop-opacity=".45" />
+                <stop stop-color="#39745e" stop-opacity=".7" />
+                <stop offset=".5" stop-color="#39745e" stop-opacity=".06" />
+                <stop offset="1" stop-color="#39745e" stop-opacity=".45" />
               </linearGradient>
             </defs>
             <circle cx="250" cy="210" r="163" class="outer-orbit" />
@@ -133,19 +135,19 @@
               transform="rotate(-36 250 210)"
               stroke="url(#orbitGradient)"
             />
-            <path class="map-path path-backend" d="M250 210 120 109" />
+            <path class="map-path path-backend" d="M250 210 191 354" />
             <path class="map-path path-frontend" d="M250 210 401 188" />
-            <path class="map-path path-ai" d="M250 210 191 354" />
+            <path class="map-path path-ai" d="M250 210 120 109" />
             <g class="orbit-spin">
-              <circle cx="250" cy="47" r="4" fill="#d5f58b" />
-              <circle cx="250" cy="373" r="3" fill="#7b876e" />
+              <circle cx="250" cy="47" r="4" fill="#39745e" />
+              <circle cx="250" cy="373" r="3" fill="#96b5a6" />
             </g>
-            <circle class="travel-dot dot-backend" r="3" fill="#d5f58b" />
-            <circle class="travel-dot dot-frontend" r="3" fill="#d5f58b" />
-            <circle class="travel-dot dot-ai" r="3" fill="#d5f58b" />
+            <circle class="travel-dot dot-backend" r="3" fill="#39745e" />
+            <circle class="travel-dot dot-frontend" r="3" fill="#39745e" />
+            <circle class="travel-dot dot-ai" r="3" fill="#39745e" />
             <path
               d="M38 210h12m-6-6v12M450 305h12m-6-6v12M332 51h8m-4-4v8"
-              stroke="#636b58"
+              stroke="#8fa59a"
             />
           </svg>
           <div class="core-node" aria-hidden="true">
@@ -156,11 +158,23 @@
             </div>
           </div>
           <button
+            class="stack-node node-ai"
+            type="button"
+            [class.is-active]="selectedCapability() === 'ai'"
+            [attr.aria-pressed]="selectedCapability() === 'ai'"
+            (click)="selectedCapability.set('ai')"
+          >
+            <span class="node-icon ai-icon" aria-hidden="true">✳</span
+            ><span
+              >AI & ML<span class="node-sublabel">THE INTELLIGENCE</span></span
+            ><span class="node-indicator"></span>
+          </button>
+          <button
             class="stack-node node-java"
             type="button"
-            [class.is-active]="selectedCapability() === 0"
-            [attr.aria-pressed]="selectedCapability() === 0"
-            (click)="selectedCapability.set(0)"
+            [class.is-active]="selectedCapability() === 'backend'"
+            [attr.aria-pressed]="selectedCapability() === 'backend'"
+            (click)="selectedCapability.set('backend')"
           >
             <span class="node-icon java-icon" aria-hidden="true"
               >&#123; &#125;</span
@@ -170,43 +184,31 @@
           <button
             class="stack-node node-angular"
             type="button"
-            [class.is-active]="selectedCapability() === 1"
-            [attr.aria-pressed]="selectedCapability() === 1"
-            (click)="selectedCapability.set(1)"
+            [class.is-active]="selectedCapability() === 'frontend'"
+            [attr.aria-pressed]="selectedCapability() === 'frontend'"
+            (click)="selectedCapability.set('frontend')"
           >
             <span class="node-icon angular-icon" aria-hidden="true">A</span
             ><span
               >Angular<span class="node-sublabel">THE EXPERIENCE</span></span
             ><span class="node-indicator"></span>
           </button>
-          <button
-            class="stack-node node-ai"
-            type="button"
-            [class.is-active]="selectedCapability() === 2"
-            [attr.aria-pressed]="selectedCapability() === 2"
-            (click)="selectedCapability.set(2)"
-          >
-            <span class="node-icon ai-icon" aria-hidden="true">✳</span
-            ><span
-              >AI & ML<span class="node-sublabel">THE INTELLIGENCE</span></span
-            ><span class="node-indicator"></span>
-          </button>
           <span class="map-coordinate"
-            >SYSTEMS / INTERFACES / INTELLIGENCE</span
+            >INTELLIGENCE / SYSTEMS / INTERFACES</span
           >
         </div>
         <div class="visual-detail" aria-live="polite" aria-atomic="true">
           <div class="detail-top">
             <span class="detail-label">{{
-              capabilities[selectedCapability()].diagramLabel
+              activeCapability().diagramLabel
             }}</span
             ><span class="detail-count"
-              >0{{ selectedCapability() + 1 }} / 03</span
+              >{{ activeCapability().number }} / 03</span
             >
           </div>
-          <p>{{ capabilities[selectedCapability()].diagramTitle }}</p>
+          <p>{{ activeCapability().diagramTitle }}</p>
           <span class="detail-description">{{
-            capabilities[selectedCapability()].diagramDescription
+            activeCapability().diagramDescription
           }}</span>
         </div>
         <div class="visual-bottomline">
@@ -238,12 +240,11 @@
       <div class="page-width">
         <span class="strip-label">MY EVERYDAY TOOLKIT</span>
         <div class="strip-items">
-          <span>Java</span><span class="strip-divider">/</span
-          ><span>Spring Boot</span><span class="strip-divider">/</span
-          ><span>Angular</span><span class="strip-divider">/</span
-          ><span>TypeScript</span><span class="strip-divider">/</span
+          <span>AI / ML</span><span class="strip-divider">/</span
           ><span>Python</span><span class="strip-divider">/</span
-          ><span>AI / ML</span>
+          ><span>LLMs</span><span class="strip-divider">/</span><span>Java</span
+          ><span class="strip-divider">/</span><span>Spring Boot</span
+          ><span class="strip-divider">/</span><span>Angular</span>
         </div>
       </div>
     </div>
@@ -266,8 +267,14 @@
       </div>
       <article class="experience-card" data-reveal>
         <div class="experience-sidebar">
-          <div class="infor-wordmark" aria-label="Infor">
-            infor<span>®</span>
+          <div class="infor-wordmark">
+            <img
+              src="/infor-logo.png"
+              alt="Infor"
+              width="104"
+              height="104"
+              loading="lazy"
+            />
           </div>
           <div class="experience-period">
             <span class="status-dot"></span> CURRENT CHAPTER
@@ -344,14 +351,14 @@
           <div>
             <p class="eyebrow section-label"><span>02 /</span> WHAT I BRING</p>
             <h2 id="expertise-title">
-              Full-stack expertise.<br /><span class="muted"
-                >Applied intelligence.</span
+              Applied intelligence.<br /><span class="muted"
+                >Full-stack expertise.</span
               >
             </h2>
           </div>
           <p class="section-intro">
-            Java and Angular. Machine learning and AI.<br />Engineering across
-            the application and intelligence layers.
+            Machine learning and AI. Java and Angular.<br />Engineering across
+            the intelligence and application layers.
           </p>
         </div>
         <div class="capability-grid">
@@ -410,9 +417,8 @@
           <span>03 /</span> THE PERSON BEHIND THE CODE
         </p>
         <h2 id="about-title">
-          A builder.<br />A systems thinker.<br /><span class="serif-word"
-            >An AI practitioner.</span
-          >
+          <span class="serif-word">An AI practitioner.</span><br />A systems
+          thinker.<br />A builder.
         </h2>
         <div class="about-signature">
           Rakesh<span class="signature-dot">.</span
@@ -421,19 +427,20 @@
       </div>
       <div class="about-right" data-reveal>
         <p class="about-lead">
-          Strong software foundations.<br />Intelligence built into the product.
+          Intelligence built into the product.<br />Strong software foundations.
         </p>
         <p>
           I’m Rakesh Kumar Kuna, a Software Engineer based in India, working on
-          the Infor ION project at Infor. My expertise spans Java full-stack
-          development and AI/ML engineering, connecting application architecture
-          with intelligent systems.
+          the Infor ION project at Infor. My expertise spans AI/ML engineering
+          and Java full-stack development, connecting intelligent systems with
+          dependable application architecture.
         </p>
         <p>
-          I work across backend services, Angular interfaces, machine learning,
-          and LLM-powered applications. Python, retrieval-augmented generation,
-          and AI agents extend that stack, while Kiro and Claude Code support
-          how I design, implement, and refine software.
+          I work across machine learning, LLM-powered applications, and AI
+          agents, using Python and retrieval-augmented generation to connect
+          intelligence with useful products. Java services and Angular
+          interfaces complete the stack, while Kiro and Claude Code support my
+          development workflow.
         </p>
         <div class="about-facts">
           <div>
